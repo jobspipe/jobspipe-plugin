@@ -1,0 +1,15 @@
+{
+  "name": "jobspipe",
+  "description": "Live job posting search and company tech stack detection for Claude, backed by the hosted JobsPipe API.",
+  "owner": {
+    "name": "JobsPipe",
+    "url": "https://jobspipe.dev"
+  },
+  "plugins": [
+    {
+      "name": "jobspipe",
+      "source": "./",
+      "description": "Search live job postings from 30+ job boards and detect the technologies a company runs on its domain."
+    }
+  ]
+}

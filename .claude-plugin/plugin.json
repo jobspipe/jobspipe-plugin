@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "jobspipe",
+  "displayName": "JobsPipe",
+  "version": "1.0.0",
+  "description": "Search live job postings from 30+ job boards and detect the technologies a company runs on its domain.",
+  "author": {
+    "name": "JobsPipe",
+    "url": "https://jobspipe.dev"
+  },
+  "homepage": "https://jobspipe.dev",
+  "repository": "https://github.com/jobspipe/jobspipe-plugin",
+  "license": "MIT",
+  "keywords": [
+    "jobs",
+    "hiring",
+    "recruiting",
+    "job-search",
+    "market-research",
+    "tech-stack",
+    "sales-intelligence"
+  ]
+}
