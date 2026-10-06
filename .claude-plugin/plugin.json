@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "jobspipe",
   "displayName": "JobsPipe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search live job postings from 30+ job boards and detect the technologies a company runs on its domain.",
   "author": {
     "name": "JobsPipe",
@@ -11,6 +11,11 @@
   "homepage": "https://jobspipe.dev",
   "repository": "https://github.com/jobspipe/jobspipe-plugin",
   "license": "MIT",
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://docs.jobspipe.dev/ai-agents/connect",
+  "supportUrl": "https://jobspipe.dev/contact",
+  "privacyPolicyUrl": "https://jobspipe.dev/privacy",
+  "termsOfServiceUrl": "https://jobspipe.dev/terms",
   "keywords": [
     "jobs",
     "hiring",

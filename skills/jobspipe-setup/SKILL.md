@@ -21,14 +21,14 @@ jobspipe.dev and approves; no credential is ever pasted into the client.
 https://jobspipe.dev/dashboard and start with `jp_live_`. Use this when the
 connector runs somewhere non-interactive.
 
-Both paths resolve to the same account and draw down the same plan quota. A
+Both paths resolve to the same account and draw down the same credit balance. A
 user who has an API key and connects with OAuth is not billed twice.
 
 ## If the user has no account
 
-Direct them to https://jobspipe.dev to sign up. The free plan allows 100
-requests per month, which is enough to evaluate the tools. Do not attempt to
-create an account on their behalf.
+Direct them to https://jobspipe.dev/signup to sign up. A free account starts
+with 1,000 credits that never expire, which is enough to evaluate the tools.
+Do not attempt to create an account on their behalf.
 
 ## Diagnosing failures
 
@@ -36,7 +36,7 @@ create an account on their behalf.
 | --- | --- | --- |
 | `401` with a `WWW-Authenticate` header | No credential, or the token expired | Have the user reconnect; the header points at the discovery document |
 | `Access token is invalid or expired. Reconnect to continue.` | The OAuth grant was revoked or aged out | Reconnect through the same sign-in flow |
-| Requests succeed but stop partway through a session | Monthly plan quota exhausted | Check `list_pricing_plans` and tell the user which tier lifts the limit |
+| `402`, or a result carrying `low_balance` | The account's credits are used up or nearly so | Call `get_account_info` to confirm, then `list_pricing_plans`; `upgrade_plan` returns a checkout link to show the user and never charges by itself |
 
-Report quota exhaustion plainly rather than retrying. Retrying a quota failure
-burns nothing but wall-clock time and hides the real cause from the user.
+Report an exhausted balance plainly rather than retrying. Retrying a credit
+failure burns nothing but wall-clock time and hides the real cause from the user.
